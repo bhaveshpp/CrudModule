@@ -3,7 +3,7 @@
     "description": "Simple Blogs module",
     "type": "magento2-module",
     "version": "1.0.0",
-    "license": "OSL-3",
+    "license": ["BSD-3-Clause"],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": 
