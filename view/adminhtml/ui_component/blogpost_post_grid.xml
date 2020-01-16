@@ -1,0 +1,56 @@
+<?xml version = "1.0"?>
+<listing xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">blogpost_post_grid.blogpost_post_grid_data_source</item>
+            <item name="deps" xsi:type="string">blogpost_post_grid.blogpost_post_grid_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="String">grid_records_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name='lable' xsi:type='string'>Create New post</item>
+                <item name='class' xsi:type='string'>primary</item>
+                <item name='url' xsi:type='string'>*/*/addpost</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name='blogpost_post_grid_data_source'>
+        <argument name='dataProvider' xsi:type='configurableObject'>
+            <argument name='class' xsi:type='string'>Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name='name' xsi:type='string'>blogpost_post_grid_data_source</argument>
+            <argument name='primaryFieldName' xsi:type='string'>post_id</argument>
+            <argument name='requestFieldName' xsi:type='string'>id</argument>
+            <argument name='data' xsi:type='array'>
+                <item name='config' xsi:type='array'>
+                    <item name='update_url' xsi:type='url' path="mui/index/render"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name='data' xsi:type='array'>
+            <item name='js_config' xsi:type='array'>
+                <item name='component' xsi:type='string'>Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <container name='listing-top'>
+        <argument name='data' xsi:type='array'>
+            <item name='config' xsi:type='array'>
+                <item name='template' xsi:type='string'>ui/grid/toolbar</item>
+                <item name='stickyTmpl' xsi:type='string'>ui/grid/sticky/toolbar</item>
+            </item>
+        </argument>
+        <bookmark name="bookmarks"/>
+        <columnsControls name='columns_controls'/>
+        <filters name='listing_filters'>
+            <argument name='data' xsi:type='array'>
+                <item name='config' xsi:type='array'>
+                    <item name='columnsProvider' xsi:type='place' >blogpost_post_grid.blogpost_post_grid.grid_record_columns</item>
+                    <item name='storageConfig' xsi:type='array'>
+                        <item name='provider' xsi:type='stringc'></item>
+                    </item>
+                </item> 
+            </argument>
+        </filters>
+    </container>
+</listing>

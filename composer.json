@@ -1,5 +1,5 @@
 {
-    "name": "bhaveshpp/blogs",
+    "name": "bhaveshpp/blogpost",
     "description": "Simple Blogs module",
     "type": "magento2-module",
     "version": "1.0.0",
@@ -21,7 +21,7 @@
         ],
         "psr-4": 
         {
-            "Bhaveshpp\\Blogs\\": ""
+            "Bhaveshpp\\Blogpost\\": ""
         }
     },
     "authors": [

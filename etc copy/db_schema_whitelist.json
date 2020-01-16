@@ -1,0 +1,13 @@
+{
+    "blogpost": {
+        "column": {
+            "post_id": true,
+            "post_title": true,
+            "post_author": true,
+            "post_discription": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

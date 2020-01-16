@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add 
+            id = "Bhaveshpp_Blogpost::blogpost_menu_title" 
+            title = "Blogpost" 
+            module = "Bhaveshpp_Blogpost" 
+            sortOrder = "100" 
+            resource = "Bhaveshpp_Blogpost::blogpost_menu_title" 
+            parent = "Magento_Backend::content"
+        />
+        <add 
+            id = "Bhaveshpp_Blogpost::blogpost_menu_all_post" 
+            title = "All Post" 
+            module = "Bhaveshpp_Blogpost" 
+            sortOrder = "101" 
+            action = "blogpost/post" 
+            resource = "Bhaveshpp_Blogpost::blogpost_menu_all_post" 
+            parent = "Bhaveshpp_Blogpost::blogpost_menu_title"
+        />
+        <add 
+            id = "Bhaveshpp_Blogpost::blogpost_settings" 
+            title = "Settings" 
+            module = "Bhaveshpp_Blogpost" 
+            sortOrder = "101" 
+            action = "adminhtml/system_config/edit/section/blogpost_setting" 
+            resource = "Bhaveshpp_Blogpost::blogpost_settings" 
+            parent = "Bhaveshpp_Blogpost::blogpost_menu_title"
+        />
+    </menu>
+</config>
+

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='urn:magento:framework:Setup/Declaration/Schema/etc/schema.xml'>
+    <table name="blogpost" resource="default" engine="innodb" comment="module-bhaveshpp-blogpost">
+        <column name="post_id" xsi:type="smallint" padding="11" identity="true" nullable="false" unsigned="false" comment="Post Id"/>
+        <column name="post_title" xsi:type="varchar" nullable="false" length="225" comment="Post Title"/>
+        <column name="post_author" xsi:type="varchar" nullable="false" length="225" comment="Post Author"/>
+        <column name="post_discription" xsi:type="text" nullable="false" comment="Post Discription"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="post_id"/>
+        </constraint>
+    </table>
+</schema>
+

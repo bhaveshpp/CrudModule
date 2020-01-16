@@ -1,0 +1,62 @@
+<?php
+
+// $block->getBlogpostlist();
+// die;
+$collection = $block->getBlogpostlist();
+$postData = $collection->getData();
+$editPost = $block->getBlogpost();
+// echo "<pre>";
+// print_r($editPost);
+// $block->getBlogpost();
+// echo "</pre>";
+?>
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-4">
+            <div class="form_main">
+                <h4 class="heading"><strong><?= $this->getData('action-type');?> </strong> Blog <span></span></h4>
+                <div class="form">
+                    <form action="<?= $this->getUrl('blogs/index/save')?>" method="post" id="contactFrm" name="contactFrm">
+
+                      <input type="hidden" value="<?= isset($editPost[0]['post_id'])?$editPost[0]['post_id']:""?>" name="post_id">
+                        
+                      <input type="text" required="" placeholder="Please input Title" value="<?= isset($editPost[0]['post_title'])?$editPost[0]['post_title']:""?>" name="post_title" class="txt">
+                        
+                      <input type="text" required="" placeholder="Please input Author" value="<?= isset($editPost[0]['post_author'])?$editPost[0]['post_author']:""?>" name="post_author" class="txt">
+
+                      <textarea placeholder="Please input Discription" name="post_discription" type="text" class="txt_3"><?= isset($editPost[0]['post_discription'])?$editPost[0]['post_discription']:""?></textarea>
+                      
+                      <input type="submit" value="submit" name="submit" class="txt2">
+                    </form>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+<h2>Blog List</h2>
+
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th><a class="txt2" href="<?= $this->getUrl('blogs'); ?>?order=post_title">Title</a></th>
+    <th><a class="txt2" href="<?= $this->getUrl('blogs'); ?>?order=post_author">Author</a></th>
+    <th><a class="txt2" href="<?= $this->getUrl('blogs'); ?>?order=post_discription">Discription</a></th>
+    <th>Action</th>
+  </tr>
+  <?php foreach ($postData as $key => $post) {?>
+      
+  <tr>
+    <td><?= $post['post_id'] ?></td>
+    <td><?= __($post['post_title']) ?></td>
+    <td><?= __($post['post_author']) ?></td>
+    <td><?= __($post['post_discription']) ?></td>
+    <td><a class="txt2" href="<?= $this->getUrl('blogs/index/edit'); ?>?post_id=<?= $post['post_id'] ?>">Edit</a> / <a href="<?= $this->getUrl('blogs/index/delete'); ?>?post_id=<?= $post['post_id'] ?>" onclick="return confirm('are you want to delete ?')?true:false">Delete</a></td>
+  </tr>
+  
+  <?php }?>
+</table>
+
+
+
