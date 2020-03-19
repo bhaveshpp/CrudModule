@@ -1,2 +1,3 @@
-# Blogs
-Magento 2 Extension for simple blogs
+# CRUD Module
+Magento 2 Extension for simple CRUD operation
+
